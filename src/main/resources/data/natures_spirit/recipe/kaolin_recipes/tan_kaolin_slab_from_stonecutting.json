@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "natures_spirit:tan_kaolin"
+  },
+  "result": {
+    "id": "natures_spirit:tan_kaolin_slab",
+    "count": 2
+  }
+}

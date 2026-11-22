@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "S": {
+      "item": "natures_spirit:beige_kaolin"
+    }
+  },
+  "pattern": [
+    "SS",
+    "SS"
+  ],
+  "result": {
+    "id": "natures_spirit:beige_kaolin_bricks",
+    "count": 4
+  },
+  "show_notification": true
+}

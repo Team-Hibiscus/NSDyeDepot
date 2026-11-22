@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "natures_spirit:mint_kaolin"
+  },
+  "result": {
+    "id": "natures_spirit:mint_kaolin_stairs",
+    "count": 1
+  }
+}

@@ -1,0 +1,211 @@
+package net.hibiscus.natures_spirit;
+
+import net.hibiscus.natures_spirit.registration.NSDyeDepotBlocks;
+import net.hibiscus.naturespirit.registration.NSBlocks;
+import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.CreativeModeTabs;
+import net.neoforged.bus.api.IEventBus;
+import net.neoforged.fml.ModContainer;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.neoforged.neoforge.common.NeoForge;
+import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
+
+@Mod(NSDyeDepot.MODID)
+public class NSDyeDepot {
+    public static final String MODID = "ns_dye_depot";
+
+    public NSDyeDepot(IEventBus modEventBus, ModContainer modContainer) {
+        modEventBus.addListener(this::commonSetup);
+        NSDyeDepotBlocks.register();
+        modEventBus.addListener(this::addCreative);
+    }
+
+    private void commonSetup(final FMLCommonSetupEvent event) {
+
+    }
+    private void addCreative(BuildCreativeModeTabContentsEvent event) {
+        if (event.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS) {
+            event.insertAfter(NSBlocks.BROWN_PAPER_LANTERN.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.MAROON_PAPER_LANTERN.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_TAB_ONLY);
+            event.insertAfter(NSDyeDepotBlocks.MAROON_PAPER_LANTERN.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.ROSE_PAPER_LANTERN.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_TAB_ONLY);
+            event.insertAfter(NSBlocks.RED_PAPER_LANTERN.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.CORAL_PAPER_LANTERN.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_TAB_ONLY);
+            event.insertAfter(NSDyeDepotBlocks.CORAL_PAPER_LANTERN.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.GINGER_PAPER_LANTERN.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_TAB_ONLY);
+            event.insertAfter(NSBlocks.ORANGE_PAPER_LANTERN.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.TAN_PAPER_LANTERN.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_TAB_ONLY);
+            event.insertAfter(NSDyeDepotBlocks.TAN_PAPER_LANTERN.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.BEIGE_PAPER_LANTERN.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_TAB_ONLY);
+            event.insertAfter(NSBlocks.YELLOW_PAPER_LANTERN.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.AMBER_PAPER_LANTERN.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_TAB_ONLY);
+            event.insertAfter(NSDyeDepotBlocks.AMBER_PAPER_LANTERN.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.OLIVE_PAPER_LANTERN.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_TAB_ONLY);
+            event.insertAfter(NSBlocks.LIME_PAPER_LANTERN.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.FOREST_PAPER_LANTERN.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_TAB_ONLY);
+            event.insertAfter(NSBlocks.GREEN_PAPER_LANTERN.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.VERDANT_PAPER_LANTERN.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_TAB_ONLY);
+            event.insertAfter(NSDyeDepotBlocks.VERDANT_PAPER_LANTERN.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.TEAL_PAPER_LANTERN.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_TAB_ONLY);
+            event.insertAfter(NSBlocks.CYAN_PAPER_LANTERN.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.MINT_PAPER_LANTERN.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_TAB_ONLY);
+            event.insertAfter(NSDyeDepotBlocks.MINT_PAPER_LANTERN.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.AQUA_PAPER_LANTERN.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_TAB_ONLY);
+            event.insertAfter(NSBlocks.BLUE_PAPER_LANTERN.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.SLATE_PAPER_LANTERN.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_TAB_ONLY);
+            event.insertAfter(NSDyeDepotBlocks.SLATE_PAPER_LANTERN.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.NAVY_PAPER_LANTERN.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_TAB_ONLY);
+            event.insertAfter(NSDyeDepotBlocks.NAVY_PAPER_LANTERN.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.INDIGO_PAPER_LANTERN.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_TAB_ONLY);
+        }
+
+        if(event.getTabKey() == CreativeModeTabs.COLORED_BLOCKS){
+            event.insertAfter(NSBlocks.BROWN_PAPER_LANTERN.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.MAROON_PAPER_LANTERN.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSDyeDepotBlocks.MAROON_PAPER_LANTERN.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.ROSE_PAPER_LANTERN.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSBlocks.RED_PAPER_LANTERN.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.CORAL_PAPER_LANTERN.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSDyeDepotBlocks.CORAL_PAPER_LANTERN.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.GINGER_PAPER_LANTERN.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSBlocks.ORANGE_PAPER_LANTERN.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.TAN_PAPER_LANTERN.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSDyeDepotBlocks.TAN_PAPER_LANTERN.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.BEIGE_PAPER_LANTERN.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSBlocks.YELLOW_PAPER_LANTERN.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.AMBER_PAPER_LANTERN.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSDyeDepotBlocks.AMBER_PAPER_LANTERN.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.OLIVE_PAPER_LANTERN.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSBlocks.LIME_PAPER_LANTERN.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.FOREST_PAPER_LANTERN.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSBlocks.GREEN_PAPER_LANTERN.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.VERDANT_PAPER_LANTERN.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSDyeDepotBlocks.VERDANT_PAPER_LANTERN.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.TEAL_PAPER_LANTERN.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSBlocks.CYAN_PAPER_LANTERN.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.MINT_PAPER_LANTERN.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSDyeDepotBlocks.MINT_PAPER_LANTERN.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.AQUA_PAPER_LANTERN.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSBlocks.BLUE_PAPER_LANTERN.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.SLATE_PAPER_LANTERN.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSDyeDepotBlocks.SLATE_PAPER_LANTERN.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.NAVY_PAPER_LANTERN.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSDyeDepotBlocks.NAVY_PAPER_LANTERN.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.INDIGO_PAPER_LANTERN.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSBlocks.BROWN_KAOLIN.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.MAROON_KAOLIN.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSDyeDepotBlocks.MAROON_KAOLIN.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.ROSE_KAOLIN.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSBlocks.RED_KAOLIN.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.CORAL_KAOLIN.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSDyeDepotBlocks.CORAL_KAOLIN.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.GINGER_KAOLIN.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSBlocks.ORANGE_KAOLIN.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.TAN_KAOLIN.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSDyeDepotBlocks.TAN_KAOLIN.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.BEIGE_KAOLIN.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSBlocks.YELLOW_KAOLIN.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.AMBER_KAOLIN.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSDyeDepotBlocks.AMBER_KAOLIN.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.OLIVE_KAOLIN.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSBlocks.LIME_KAOLIN.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.FOREST_KAOLIN.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSBlocks.GREEN_KAOLIN.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.VERDANT_KAOLIN.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSDyeDepotBlocks.VERDANT_KAOLIN.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.TEAL_KAOLIN.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSBlocks.CYAN_KAOLIN.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.MINT_KAOLIN.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSDyeDepotBlocks.MINT_KAOLIN.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.AQUA_KAOLIN.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSBlocks.BLUE_KAOLIN.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.SLATE_KAOLIN.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSDyeDepotBlocks.SLATE_KAOLIN.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.NAVY_KAOLIN.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSDyeDepotBlocks.NAVY_KAOLIN.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.INDIGO_KAOLIN.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSBlocks.BROWN_KAOLIN_STAIRS.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.MAROON_KAOLIN_STAIRS.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSDyeDepotBlocks.MAROON_KAOLIN_STAIRS.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.ROSE_KAOLIN_STAIRS.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSBlocks.RED_KAOLIN_STAIRS.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.CORAL_KAOLIN_STAIRS.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSDyeDepotBlocks.CORAL_KAOLIN_STAIRS.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.GINGER_KAOLIN_STAIRS.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSBlocks.ORANGE_KAOLIN_STAIRS.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.TAN_KAOLIN_STAIRS.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSDyeDepotBlocks.TAN_KAOLIN_STAIRS.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.BEIGE_KAOLIN_STAIRS.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSBlocks.YELLOW_KAOLIN_STAIRS.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.AMBER_KAOLIN_STAIRS.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSDyeDepotBlocks.AMBER_KAOLIN_STAIRS.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.OLIVE_KAOLIN_STAIRS.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSBlocks.LIME_KAOLIN_STAIRS.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.FOREST_KAOLIN_STAIRS.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSBlocks.GREEN_KAOLIN_STAIRS.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.VERDANT_KAOLIN_STAIRS.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSDyeDepotBlocks.VERDANT_KAOLIN_STAIRS.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.TEAL_KAOLIN_STAIRS.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSBlocks.CYAN_KAOLIN_STAIRS.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.MINT_KAOLIN_STAIRS.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSDyeDepotBlocks.MINT_KAOLIN_STAIRS.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.AQUA_KAOLIN_STAIRS.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSBlocks.BLUE_KAOLIN_STAIRS.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.SLATE_KAOLIN_STAIRS.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSDyeDepotBlocks.SLATE_KAOLIN_STAIRS.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.NAVY_KAOLIN_STAIRS.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSDyeDepotBlocks.NAVY_KAOLIN_STAIRS.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.INDIGO_KAOLIN_STAIRS.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSBlocks.BROWN_KAOLIN_SLAB.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.MAROON_KAOLIN_SLAB.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSDyeDepotBlocks.MAROON_KAOLIN_SLAB.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.ROSE_KAOLIN_SLAB.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSBlocks.RED_KAOLIN_SLAB.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.CORAL_KAOLIN_SLAB.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSDyeDepotBlocks.CORAL_KAOLIN_SLAB.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.GINGER_KAOLIN_SLAB.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSBlocks.ORANGE_KAOLIN_SLAB.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.TAN_KAOLIN_SLAB.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSDyeDepotBlocks.TAN_KAOLIN_SLAB.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.BEIGE_KAOLIN_SLAB.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSBlocks.YELLOW_KAOLIN_SLAB.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.AMBER_KAOLIN_SLAB.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSDyeDepotBlocks.AMBER_KAOLIN_SLAB.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.OLIVE_KAOLIN_SLAB.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSBlocks.LIME_KAOLIN_SLAB.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.FOREST_KAOLIN_SLAB.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSBlocks.GREEN_KAOLIN_SLAB.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.VERDANT_KAOLIN_SLAB.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSDyeDepotBlocks.VERDANT_KAOLIN_SLAB.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.TEAL_KAOLIN_SLAB.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSBlocks.CYAN_KAOLIN_SLAB.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.MINT_KAOLIN_SLAB.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSDyeDepotBlocks.MINT_KAOLIN_SLAB.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.AQUA_KAOLIN_SLAB.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSBlocks.BLUE_KAOLIN_SLAB.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.SLATE_KAOLIN_SLAB.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSDyeDepotBlocks.SLATE_KAOLIN_SLAB.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.NAVY_KAOLIN_SLAB.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSDyeDepotBlocks.NAVY_KAOLIN_SLAB.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.INDIGO_KAOLIN_SLAB.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSBlocks.BROWN_KAOLIN_BRICKS.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.MAROON_KAOLIN_BRICKS.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSDyeDepotBlocks.MAROON_KAOLIN_BRICKS.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.ROSE_KAOLIN_BRICKS.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSBlocks.RED_KAOLIN_BRICKS.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.CORAL_KAOLIN_BRICKS.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSDyeDepotBlocks.CORAL_KAOLIN_BRICKS.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.GINGER_KAOLIN_BRICKS.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSBlocks.ORANGE_KAOLIN_BRICKS.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.TAN_KAOLIN_BRICKS.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSDyeDepotBlocks.TAN_KAOLIN_BRICKS.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.BEIGE_KAOLIN_BRICKS.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSBlocks.YELLOW_KAOLIN_BRICKS.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.AMBER_KAOLIN_BRICKS.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSDyeDepotBlocks.AMBER_KAOLIN_BRICKS.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.OLIVE_KAOLIN_BRICKS.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSBlocks.LIME_KAOLIN_BRICKS.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.FOREST_KAOLIN_BRICKS.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSBlocks.GREEN_KAOLIN_BRICKS.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.VERDANT_KAOLIN_BRICKS.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSDyeDepotBlocks.VERDANT_KAOLIN_BRICKS.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.TEAL_KAOLIN_BRICKS.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSBlocks.CYAN_KAOLIN_BRICKS.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.MINT_KAOLIN_BRICKS.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSDyeDepotBlocks.MINT_KAOLIN_BRICKS.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.AQUA_KAOLIN_BRICKS.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSBlocks.BLUE_KAOLIN_BRICKS.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.SLATE_KAOLIN_BRICKS.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSDyeDepotBlocks.SLATE_KAOLIN_BRICKS.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.NAVY_KAOLIN_BRICKS.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSDyeDepotBlocks.NAVY_KAOLIN_BRICKS.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.INDIGO_KAOLIN_BRICKS.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSBlocks.BROWN_KAOLIN_BRICK_STAIRS.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.MAROON_KAOLIN_BRICK_STAIRS.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSDyeDepotBlocks.MAROON_KAOLIN_BRICK_STAIRS.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.ROSE_KAOLIN_BRICK_STAIRS.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSBlocks.RED_KAOLIN_BRICK_STAIRS.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.CORAL_KAOLIN_BRICK_STAIRS.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSDyeDepotBlocks.CORAL_KAOLIN_BRICK_STAIRS.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.GINGER_KAOLIN_BRICK_STAIRS.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSBlocks.ORANGE_KAOLIN_BRICK_STAIRS.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.TAN_KAOLIN_BRICK_STAIRS.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSDyeDepotBlocks.TAN_KAOLIN_BRICK_STAIRS.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.BEIGE_KAOLIN_BRICK_STAIRS.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSBlocks.YELLOW_KAOLIN_BRICK_STAIRS.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.AMBER_KAOLIN_BRICK_STAIRS.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSDyeDepotBlocks.AMBER_KAOLIN_BRICK_STAIRS.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.OLIVE_KAOLIN_BRICK_STAIRS.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSBlocks.LIME_KAOLIN_BRICK_STAIRS.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.FOREST_KAOLIN_BRICK_STAIRS.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSBlocks.GREEN_KAOLIN_BRICK_STAIRS.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.VERDANT_KAOLIN_BRICK_STAIRS.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSDyeDepotBlocks.VERDANT_KAOLIN_BRICK_STAIRS.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.TEAL_KAOLIN_BRICK_STAIRS.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSBlocks.CYAN_KAOLIN_BRICK_STAIRS.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.MINT_KAOLIN_BRICK_STAIRS.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSDyeDepotBlocks.MINT_KAOLIN_BRICK_STAIRS.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.AQUA_KAOLIN_BRICK_STAIRS.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSBlocks.BLUE_KAOLIN_BRICK_STAIRS.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.SLATE_KAOLIN_BRICK_STAIRS.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSDyeDepotBlocks.SLATE_KAOLIN_BRICK_STAIRS.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.NAVY_KAOLIN_BRICK_STAIRS.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSDyeDepotBlocks.NAVY_KAOLIN_BRICK_STAIRS.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.INDIGO_KAOLIN_BRICK_STAIRS.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSBlocks.BROWN_KAOLIN_BRICK_SLAB.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.MAROON_KAOLIN_BRICK_SLAB.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSDyeDepotBlocks.MAROON_KAOLIN_BRICK_SLAB.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.ROSE_KAOLIN_BRICK_SLAB.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSBlocks.RED_KAOLIN_BRICK_SLAB.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.CORAL_KAOLIN_BRICK_SLAB.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSDyeDepotBlocks.CORAL_KAOLIN_BRICK_SLAB.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.GINGER_KAOLIN_BRICK_SLAB.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSBlocks.ORANGE_KAOLIN_BRICK_SLAB.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.TAN_KAOLIN_BRICK_SLAB.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSDyeDepotBlocks.TAN_KAOLIN_BRICK_SLAB.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.BEIGE_KAOLIN_BRICK_SLAB.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSBlocks.YELLOW_KAOLIN_BRICK_SLAB.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.AMBER_KAOLIN_BRICK_SLAB.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSDyeDepotBlocks.AMBER_KAOLIN_BRICK_SLAB.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.OLIVE_KAOLIN_BRICK_SLAB.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSBlocks.LIME_KAOLIN_BRICK_SLAB.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.FOREST_KAOLIN_BRICK_SLAB.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSBlocks.GREEN_KAOLIN_BRICK_SLAB.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.VERDANT_KAOLIN_BRICK_SLAB.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSDyeDepotBlocks.VERDANT_KAOLIN_BRICK_SLAB.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.TEAL_KAOLIN_BRICK_SLAB.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSBlocks.CYAN_KAOLIN_BRICK_SLAB.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.MINT_KAOLIN_BRICK_SLAB.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSDyeDepotBlocks.MINT_KAOLIN_BRICK_SLAB.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.AQUA_KAOLIN_BRICK_SLAB.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSBlocks.BLUE_KAOLIN_BRICK_SLAB.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.SLATE_KAOLIN_BRICK_SLAB.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSDyeDepotBlocks.SLATE_KAOLIN_BRICK_SLAB.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.NAVY_KAOLIN_BRICK_SLAB.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSDyeDepotBlocks.NAVY_KAOLIN_BRICK_SLAB.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.INDIGO_KAOLIN_BRICK_SLAB.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSBlocks.BROWN_CHALK.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.MAROON_CHALK.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSDyeDepotBlocks.MAROON_CHALK.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.ROSE_CHALK.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSBlocks.RED_CHALK.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.CORAL_CHALK.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSDyeDepotBlocks.CORAL_CHALK.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.GINGER_CHALK.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSBlocks.ORANGE_CHALK.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.TAN_CHALK.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSDyeDepotBlocks.TAN_CHALK.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.BEIGE_CHALK.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSBlocks.YELLOW_CHALK.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.AMBER_CHALK.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSDyeDepotBlocks.AMBER_CHALK.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.OLIVE_CHALK.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSBlocks.LIME_CHALK.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.FOREST_CHALK.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSBlocks.GREEN_CHALK.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.VERDANT_CHALK.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSDyeDepotBlocks.VERDANT_CHALK.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.TEAL_CHALK.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSBlocks.CYAN_CHALK.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.MINT_CHALK.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSDyeDepotBlocks.MINT_CHALK.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.AQUA_CHALK.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSBlocks.BLUE_CHALK.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.SLATE_CHALK.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSDyeDepotBlocks.SLATE_CHALK.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.NAVY_CHALK.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSDyeDepotBlocks.NAVY_CHALK.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.INDIGO_CHALK.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSBlocks.BROWN_CHALK_STAIRS.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.MAROON_CHALK_STAIRS.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSDyeDepotBlocks.MAROON_CHALK_STAIRS.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.ROSE_CHALK_STAIRS.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSBlocks.RED_CHALK_STAIRS.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.CORAL_CHALK_STAIRS.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSDyeDepotBlocks.CORAL_CHALK_STAIRS.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.GINGER_CHALK_STAIRS.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSBlocks.ORANGE_CHALK_STAIRS.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.TAN_CHALK_STAIRS.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSDyeDepotBlocks.TAN_CHALK_STAIRS.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.BEIGE_CHALK_STAIRS.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSBlocks.YELLOW_CHALK_STAIRS.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.AMBER_CHALK_STAIRS.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSDyeDepotBlocks.AMBER_CHALK_STAIRS.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.OLIVE_CHALK_STAIRS.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSBlocks.LIME_CHALK_STAIRS.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.FOREST_CHALK_STAIRS.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSBlocks.GREEN_CHALK_STAIRS.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.VERDANT_CHALK_STAIRS.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSDyeDepotBlocks.VERDANT_CHALK_STAIRS.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.TEAL_CHALK_STAIRS.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSBlocks.CYAN_CHALK_STAIRS.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.MINT_CHALK_STAIRS.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSDyeDepotBlocks.MINT_CHALK_STAIRS.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.AQUA_CHALK_STAIRS.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSBlocks.BLUE_CHALK_STAIRS.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.SLATE_CHALK_STAIRS.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSDyeDepotBlocks.SLATE_CHALK_STAIRS.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.NAVY_CHALK_STAIRS.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSDyeDepotBlocks.NAVY_CHALK_STAIRS.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.INDIGO_CHALK_STAIRS.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSBlocks.BROWN_CHALK_SLAB.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.MAROON_CHALK_SLAB.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSDyeDepotBlocks.MAROON_CHALK_SLAB.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.ROSE_CHALK_SLAB.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSBlocks.RED_CHALK_SLAB.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.CORAL_CHALK_SLAB.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSDyeDepotBlocks.CORAL_CHALK_SLAB.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.GINGER_CHALK_SLAB.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSBlocks.ORANGE_CHALK_SLAB.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.TAN_CHALK_SLAB.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSDyeDepotBlocks.TAN_CHALK_SLAB.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.BEIGE_CHALK_SLAB.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSBlocks.YELLOW_CHALK_SLAB.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.AMBER_CHALK_SLAB.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSDyeDepotBlocks.AMBER_CHALK_SLAB.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.OLIVE_CHALK_SLAB.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSBlocks.LIME_CHALK_SLAB.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.FOREST_CHALK_SLAB.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSBlocks.GREEN_CHALK_SLAB.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.VERDANT_CHALK_SLAB.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSDyeDepotBlocks.VERDANT_CHALK_SLAB.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.TEAL_CHALK_SLAB.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSBlocks.CYAN_CHALK_SLAB.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.MINT_CHALK_SLAB.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSDyeDepotBlocks.MINT_CHALK_SLAB.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.AQUA_CHALK_SLAB.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSBlocks.BLUE_CHALK_SLAB.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.SLATE_CHALK_SLAB.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSDyeDepotBlocks.SLATE_CHALK_SLAB.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.NAVY_CHALK_SLAB.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(NSDyeDepotBlocks.NAVY_CHALK_SLAB.get().asItem().getDefaultInstance(), NSDyeDepotBlocks.INDIGO_CHALK_SLAB.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+        }
+    }
+}
+

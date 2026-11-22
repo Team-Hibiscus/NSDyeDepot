@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "natures_spirit:maroon_chalk"
+  },
+  "result": {
+    "id": "natures_spirit:maroon_chalk_stairs",
+    "count": 1
+  }
+}

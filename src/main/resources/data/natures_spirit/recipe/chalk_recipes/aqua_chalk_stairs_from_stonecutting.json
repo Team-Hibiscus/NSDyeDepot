@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "natures_spirit:aqua_chalk"
+  },
+  "result": {
+    "id": "natures_spirit:aqua_chalk_stairs",
+    "count": 1
+  }
+}
